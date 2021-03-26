@@ -1,0 +1,26 @@
+{%extends "base.html"%}
+
+{%block contenido%}
+    <h1>Inicio</h1>
+    
+    <ul>
+        {% for lib in listalibros %}
+            <li>{{lib.Titulo}}</li>
+
+            {% for a in lib.Autores %}
+            <ul>
+                <li style="font-weight: bolder;">Autor:</li>
+                <li>
+                    Nombre: {{a.Nombre}}
+                </li>
+                <li>
+                    Apellidos: {{a.Apellido}}
+                </li>
+                    País de origen: {{a.Pais}}
+                </li>
+            </ul>
+            {% endfor %}
+            <br>
+        {% endfor %}
+    </ul>
+{%endblock%}

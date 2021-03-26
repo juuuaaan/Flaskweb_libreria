@@ -1,0 +1,31 @@
+{%extends "base.html"%}
+
+{%block contenido%}
+    <h1>Busqueda avanzada</h1>
+
+    <form action="/buscar" method="POST" name="formBuscar">
+         <div class="form-group">
+            <label for="Titulo">Titulo</label>
+            <input type="text" name="Titulo" class="form-control" id="Titulo" aria-describedby="emailHelp" placeholder="escribe el titulo...">
+        </div>
+        <div class="form-group">
+            <label for="Anio">Año</label>
+            <input type="number" name="Anio" class="form-control" id="Anio" placeholder="escribe el año...">
+        </div>
+        <div class="form-group">
+            <label for="Precio">Precio</label>
+            <input type="number" name="Precio" class="form-control" id="Precio" placeholder="escribe el precio...">
+        </div>
+        <button type="submit" class="btn btn-primary">Buscar</button>
+    </form>
+
+    <h2>Resultados de la busqueda:</h2>
+
+    <ul>
+        {% for lib in listalibros %}
+            <li>{{lib.Titulo}}</li>
+        {% endfor %}
+    </ul>
+
+
+{%endblock%}

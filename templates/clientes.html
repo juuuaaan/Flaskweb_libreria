@@ -1,0 +1,47 @@
+{%extends "base.html"%}
+
+{%block contenido%}
+
+    <h1>Clientes</h1>
+
+    <ul>
+        {% for cli in listaClientes %}
+            <li style="font-weight: bolder;">Nombre: </li>
+            <ul>
+                <li>{{cli.Nombre}}</li>
+            </ul>
+            <li style="font-weight: bolder;">Apellidos: </li>
+            <ul>
+                <li>{{cli.Apellidos}}</li>
+            </ul>
+
+                <label style="font-weight: bolder; font-style: italic">Direccion del cliente</label>
+                <br>
+
+                    {% for a in cli.Direccion %}
+                    <li style="font-weight: bolder;">Calle: </li>
+                    <ul>
+                        <li>{{a.Calle}}</li>
+                    </ul>
+
+                    <li style="font-weight: bolder;">Colonia: </li>
+                    <ul>
+                        <li>{{a.Colonia}}</li>
+                    </ul>
+
+                    <li style="font-weight: bolder;">Código postal: </li>
+                    <ul>
+                        <li>{{a.CP}}</li>
+                    </ul>
+                    {% endfor %}
+
+            <li style="font-weight: bolder;">Correo: </li>
+            <ul>
+                <li>{{cli["Correo"]}}</li>
+            </ul>
+        <label>-------------------------------------------</label>
+
+        {% endfor %}
+    </ul>
+
+{%endblock%}
