@@ -139,6 +139,14 @@ def editarLibro():
 
     return render_template("actualizar.html", libro=book)
 
+@app.route("/eliminarLibro")
+def eliminarLibro():
+    id = str(request.args.get("libro"))
 
+    mongo.db.libros.remove({
+        "_id": ObjectId(id)
+    })
+
+    return redirect("/")
 
 app.run(debug=True, port=80)
