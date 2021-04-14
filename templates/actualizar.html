@@ -1,10 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{%extends "base.html"%}
+
+{% block contenido %}
+    <h1>Actualizar información</h1>
+
+    <div class="row">
+        <div class="col">
+            <form action="" method="POST">
+                    <div class="form-group">
+                        <input type="hidden" name="id" value="{{ libro._id }}">
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            Titulo del libro:
+                            <input type="text" name="Titulo" class="form-control" value="{{ libro.Titulo }}">
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            Editorial del libro:
+                            <input type="text" name="Editorial" class="form-control" value="{{ libro.Editorial }}">
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            Edicion del libro:
+                            <input type="number" name="Edicion" class="form-control" value="{{ libro.Edicion }}">
+                        </label>
+                    </div>
+
+                    
+                        {% for autor in libro.Autores %}
+                            <div class="form-group">
+                                <label>
+                                    Nombre del autor:
+                                    <input type="text" name="Nombre[]" class="form-control" value="{{ autor.Nombre }}">
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    Apellidos del autor:
+                                    <input type="text" name="Apellido[]" class="form-control" value="{{ autor.Apellido }}">
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <label>
+                                    Pais de origen del autor:
+                                    <input type="text" name="Pais[]" class="form-control" value="{{ autor.Pais }}">
+                                </label>
+                            </div>
+                        {% endfor %}
+                    
+
+                    <div class="form-group">
+                        <label>
+                            Año del libro:
+                            <input type="number" name="Anio" class="form-control" value="{{ libro.Anio }}">
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            Precio del libro:
+                            <input type="number" name="Precio" class="form-control" value="{{ libro.Precio }}">
+                        </label>
+                    </div>
+                <button type="submit" class="btn btn-primary">Actualizar libro</button>
+            </form>
+        </div>
+    </div>
+    <br>
+
+{% endblock %}

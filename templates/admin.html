@@ -1,74 +1,81 @@
 {%extends "base.html"%}
 
 {%block contenido%}
+    <div class="row">
 
-    <h1>Agregar libro:</h1>
-    <form action="/agregarLibro" method="POST" name="formAgregar">
-        <div class="form-group" id="statusSolicitud">
-        </div>
-        <div class="form-group">
-            <label for="Titulo">Titulo</label>
-            <input type="text" name="Titulo" class="form-control" id="Titulo" aria-describedby="emailHelp" placeholder="escribe el titulo...">
-        </div>
-        <div class="form-group">
-            <label>Autores</label>
-            <label class="btn btn-secondary" onclick="agregarAutor()">+Agregar uno</label>
-                
-                <div class="form-group" id="SeccionAutores">
+    <div class="col">
+        <h1>Agregar libro:</h1>
+            <form action="/agregarLibro" method="POST" name="formAgregar">
+                <div class="form-group" id="statusSolicitud">
                 </div>
-                
-        </div>
-        <div class="form-group">
-            <label for="Editorial">Editorial</label>
-            <input type="text" name="Editorial" class="form-control" id="Editorial" placeholder="escribe la editorial...">
-        </div>
-        <div class="form-group">
-            <label for="Edicion">Edicion</label>
-            <input type="text" name="Edicion" class="form-control" id="Edicion" placeholder="escribe la edición...">
-        </div>
-        <div class="form-group">
-            <label for="Anio">Año</label>
-            <input type="number" name="Anio" class="form-control" id="Anio" placeholder="escribe el año...">
-        </div>
-        <div class="form-group">
-            <label for="Precio">Precio</label>
-            <input type="number" name="Precio" class="form-control" id="Precio" placeholder="escribe el precio...">
-        </div>
-        <button type="submit" class="btn btn-primary" onclick="statusAgregacionLibro()">Guardar libro</button>
-    </form>
+                <div class="form-group">
+                    <label for="Titulo">Titulo</label>
+                    <input type="text" name="Titulo" class="form-control" id="Titulo" aria-describedby="emailHelp" placeholder="escribe el titulo...">
+                </div>
+                <div class="form-group">
+                    <label>Autores</label>
+                    <label class="btn btn-secondary" onclick="agregarAutor()">+Agregar uno</label>
 
-    <h1>Agregar clientes:</h1>
+                        <div class="form-group" id="SeccionAutores">
+                        </div>
 
-    <form action="/agregarCliente" method="POST" name="formAgregar">
-        <div class="form-group" id="statusSolicitudC">
-        </div>
-        <div class="form-group">
-            <label for="Nombre">Nombre</label>
-            <input type="text" name="Nombre" class="form-control" id="Nombre" placeholder="escribe el nombre del cliente...">
-        </div>
-        <div class="form-group">
-            <label for="Apellidos">Apellidos</label>
-            <input type="text" name="Apellidos" class="form-control" id="Apellidos" placeholder="escribe los apellidos del cliente...">
-        </div>
-        <div class="form-group">
-            <label for="Calle" style="font-style: italic">Dirección</label>
-            <br>
-            <label for="Calle">Calle</label>
-            <input type="text" name="Calle" class="form-control" id="Calle" placeholder="escribe la direccion del cliente...">
-        </div>
-        <div class="form-group">
-            <label for="Colonia">Colonia</label>
-            <input type="text" name="Colonia" class="form-control" id="Colonia" placeholder="escribe la colonia del cliente...">
-        </div>
-        <div class="form-group">
-            <label for="CP">Codigo postal</label>
-            <input type="number" name="CP" class="form-control" id="CP" placeholder="escribe el codigo postal del cliente...">
-        </div>
-        <div class="form-group">
-            <label for="Correo">Correo</label>
-            <input type="email" name="Correo" class="form-control" id="Correo" placeholder="escribe el correo del cliente...">
-        </div>
-        <button type="submit" class="btn btn-primary">Guardar cliente</button>
-    </form>
+                </div>
+                <div class="form-group">
+                    <label for="Editorial">Editorial</label>
+                    <input type="text" name="Editorial" class="form-control" id="Editorial" placeholder="escribe la editorial...">
+                </div>
+                <div class="form-group">
+                    <label for="Edicion">Edicion</label>
+                    <input type="text" name="Edicion" class="form-control" id="Edicion" placeholder="escribe la edición...">
+                </div>
+                <div class="form-group">
+                    <label for="Anio">Año</label>
+                    <input type="number" name="Anio" class="form-control" id="Anio" placeholder="escribe el año...">
+                </div>
+                <div class="form-group">
+                    <label for="Precio">Precio</label>
+                    <input type="number" name="Precio" class="form-control" id="Precio" placeholder="escribe el precio...">
+                </div>
+                <button type="submit" class="btn btn-primary" onclick="statusAgregacionLibro()">Guardar libro</button>
+            </form>
+    </div>
+
+    <div class="col">
+      <h1>Agregar clientes:</h1>
+
+        <form action="/agregarCliente" method="POST" name="formAgregar">
+            <div class="form-group" id="statusSolicitudC">
+            </div>
+            <div class="form-group">
+                <label for="Nombre">Nombre</label>
+                <input type="text" name="Nombre" class="form-control" id="Nombre" placeholder="escribe el nombre del cliente...">
+            </div>
+            <div class="form-group">
+                <label for="Apellidos">Apellidos</label>
+                <input type="text" name="Apellidos" class="form-control" id="Apellidos" placeholder="escribe los apellidos del cliente...">
+            </div>
+            <div class="form-group">
+                <label for="Calle" style="font-style: italic">Dirección</label>
+                <br>
+                <label for="Calle">Calle</label>
+                <input type="text" name="Calle" class="form-control" id="Calle" placeholder="escribe la direccion del cliente...">
+            </div>
+            <div class="form-group">
+                <label for="Colonia">Colonia</label>
+                <input type="text" name="Colonia" class="form-control" id="Colonia" placeholder="escribe la colonia del cliente...">
+            </div>
+            <div class="form-group">
+                <label for="CP">Codigo postal</label>
+                <input type="number" name="CP" class="form-control" id="CP" placeholder="escribe el codigo postal del cliente...">
+            </div>
+            <div class="form-group">
+                <label for="Correo">Correo</label>
+                <input type="email" name="Correo" class="form-control" id="Correo" placeholder="escribe el correo del cliente...">
+            </div>
+            <button type="submit" class="btn btn-primary">Guardar cliente</button>
+        </form>
+    </div>
+  </div>
+
 
 {%endblock%}

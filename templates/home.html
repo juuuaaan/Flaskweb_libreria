@@ -16,11 +16,15 @@
                 <li>
                     Apellidos: {{a.Apellido}}
                 </li>
+                <li>
                     País de origen: {{a.Pais}}
                 </li>
             </ul>
             {% endfor %}
+            <a class="btn btn-primary" href="/editarLibro?libro={{lib._id}}">Editar libro</a>
+
             <br>
         {% endfor %}
+
     </ul>
 {%endblock%}

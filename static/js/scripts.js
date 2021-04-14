@@ -17,3 +17,19 @@ function agregarAutor(){
 
     listaAutores.appendChild(autor);
 }
+
+function cargarInfo(infolibro){
+
+    const seccion = document.getElementById("formularioActLibro");
+    const parte = document.createElement("p");
+
+    alert("hola")
+
+    parte.innerHTML = "<label>\n" +
+        "                        Nombre libro:\n" +
+        "                        <input type=\"text\" name=\"Nombre\" class=\"form-control\">\n" +
+        "                    </label>"
+
+    seccion.appendChild(parte);
+
+}
